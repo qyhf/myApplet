@@ -1,0 +1,60 @@
+<!-- 用户信息部分  -->
+<view class="header">
+<image class="portrait" mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+<view class="mask"></view>
+<view class="cover_img">
+  <image hidden='' class="portraitShow" src="{{userInfo.avatarUrl}}"></image>
+</view>
+
+ <view class="name">
+{{nickName}}
+ </view>
+<view class="btn">
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+</view>
+<!-- 最近与收藏导航 -->
+<view class="myConcent clearfix">
+  <view class="near">  
+    <view bindtap="near" class="wrapper {{tab_switch==false?'':'con'}}">
+      <text>最近</text>
+    </view>
+  </view>
+  <view class="near">  
+    <view bindtap="coll" class="wrapper {{tab_switch==false?'con':''}}">
+      <text>收藏</text>
+    </view>
+  </view>
+</view>
+<!-- 收藏歌曲部分 -->
+<view class="list {{tab_switch==false?'show':'hide'}}" wx:for="{{collects}}" wx:key="*this">
+  <view class="num">
+    <text>{{index+1}}</text>
+    </view>
+      <view class="containt" bindtap="collect_jump" data-index="{{index}}">
+        <text class="song {{collect_playId==index?'active':''}}">{{item.song}}</text>
+        <text class="singer {{collect_playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+        
+      </view>
+      <view class="img"><image data-type="collect" data-index="{{index}}" class="pic {{collect_playId==index?'hide':'show'}}" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/play_co.png?sign=9f55ca08210f95c19577a712613dafa8&t=1589852440" bindtap="play" ></image>
+         <image class="pic {{collect_playId==index?'show':'hide'}}" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/stop_co.png?sign=56e6e85e94b8c31652d1cc9ab1f87552&t=1589852483" bindtap="pause"></image>
+         <!-- <audio src="{{item.src}}" id="{{index}}"  bindended="ended"></audio> -->
+         </view>
+</view>
+<!-- 最近歌曲部分 -->
+<view class="list {{tab_switch==false?'hide':'show'}}" wx:for="{{near}}" wx:key="*this">
+  <view class="num">
+    <text>{{index+1}}</text>
+    </view>
+      <view class="containt" bindtap="near_jump" data-index="{{index}}">
+        <text class="song {{near_playId==index?'active':''}}">{{item.song}}</text>
+        <text class="singer {{near_playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+        
+      </view>
+      <view class="img">
+      <image id="{{near_playId}}" data-type="near" data-index="{{index}}" class="pic {{near_playId==index?'hide':'show'}}" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/play_co.png?sign=9f55ca08210f95c19577a712613dafa8&t=1589852440" bindtap="play" ></image>
+         <image class="pic {{near_playId==index?'show':'hide'}}" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/stop_co.png?sign=276438b13409c22e0587cae9e7d7d008&t=1589852414" bindtap="pause"></image>
+         <!-- <audio src="{{item.src}}" id="{{index}}"  bindended="ended"></audio> -->
+      </view>
+</view>
+

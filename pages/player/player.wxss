@@ -1,0 +1,83 @@
+
+.bgimg{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color:#fff;
+  opacity: 0.9;
+}
+.round{
+  width:200px;
+  height:200px;
+  position:absolute;
+  border-radius: 50%;
+  border:5px solid #ccc;
+  top:20px;
+  left:50%;
+  margin-left:-105px;
+}
+.play{
+  background-color:#fff;
+  width:50px;
+  height:50px;
+  position:absolute;
+  top:100px;
+  left:50%;
+  margin-left:-26px;
+  border-radius:50%;
+  opacity: .8;
+  border:1px solid #ccc;
+}
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}
+.word{
+  width:100%;
+  height:120px;
+  position:absolute;
+  font-size:14px;
+  top:250px;
+  overflow: hidden;
+
+}
+.word text{
+  display:block;
+  width:100%;
+  color:#666;
+  text-align: center;
+  line-height:28px;
+  transition: 0.5s;
+}
+.word text.active{
+  color:#d4237a;
+}
+.collect{
+  border:1px solid #d4237a;
+  border-radius:20px;
+  font-size:14px;
+  color:#d4237a;
+  padding:5px 10px;
+  position:absolute;
+  top:400px;
+  left:50%;
+  margin-left:-45px;
+}
+.collect image{
+  display:block;
+  width:20px;
+  height:20px;
+  margin-right:20px;
+  float:left;
+}
+.collect text{
+  display:block;
+  float:left;
+}

@@ -1,0 +1,22 @@
+<!-- 背景图片 -->
+<view class="wrapper">
+  <image class="bgimg" src="{{songImg}}"></image>
+  <!-- 遮罩层 -->
+  <view class="mask"></view>
+  <!-- 歌曲封面 -->
+  <image class="round" style=" transform: rotateZ({{rotate}}deg); " src="{{songImg}}"></image>
+  <!-- 播放与暂停按钮 -->
+  <image class="play {{isShow?'show':'hide'}}" bindtap="audioPlay" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/play.png?sign=a2d56a2e206db5a53fae707ac3af465a&t=1589852326"></image>
+  <image class="play {{isShow?'hide':'show'}}" bindtap="audioPause" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/stop.png?sign=cb4b25f2b02a85b86e1dfe93ade860ec&t=1589852354"></image>
+  <!-- <audio src="{{song}}" id="myAudio"  bindended="ended" bindtimeupdate="change"></audio> -->
+  <!-- 歌词部分 -->
+  <view class="word">
+  <text wx:for="{{songWord}}" wx:key="*this" class="{{songActive==index?'active':''}}" style=" transform: translateY({{distance}}px);">{{item.text}}</text>
+</view>
+<!-- 收藏按钮 -->
+  <view class="collect">
+    <image bindtap="collect" src="{{collect}}"></image>
+    <text>收藏</text>
+  </view>
+</view>
+

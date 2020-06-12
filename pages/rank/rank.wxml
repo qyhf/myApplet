@@ -1,0 +1,41 @@
+<!-- 左边导航栏部分 -->
+  <view class="wrapper">
+  <scroll-view class="scroll_left">
+  <view class="left">
+  <view bindtap="rank_switch">
+    <text wx:for="{{rank}}" wx:key="*this" class="rankName {{index==rankId?'con':''}}" data-index="{{index}}">{{item.name}}</text>
+  </view>
+</view>
+</scroll-view>
+<!-- 右边排行榜部分 -->
+<scroll-view class="scroll_right">
+  <view class="right" style="background-color:{{rank[rankId].color}}">
+<!-- 封面部分 -->
+  <view class="cover">
+    <view>
+    <image src="{{rank[rankId].img}}"></image>
+  </view>
+  <!-- 歌曲部分 -->
+  <view class="soar">
+    <text>{{rank[rankId].text}}</text>
+  </view>
+  </view>
+  <view class="content">
+    <view class="containt" wx:for="{{rank_song[rankId]}}" wx:key="*this">
+      <view class="num">
+      <text>{{index+1}}</text>
+    </view>
+    <view class="song" data-num="{{index}}" bindtap="jump_player">
+      <text class="name {{playId==index?'active':''}}">{{item.song}}</text>
+      <text class="singer {{playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+    </view>
+    <view class="icon">
+      <image data-index="{{index}}" class="{{playId==index?'hide':'show'}}" bindtap="play" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/rank_play.png?sign=e9d7bc9a8e3399fce6bc826c31926f13&t=1589852542"></image>
+      <image class="{{playId==index?'show':'hide'}}" bindtap="pause"src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/rank_stop.png?sign=1e84df532ff7edd2570ecd343700b927&t=1589852562"></image>
+       <!-- <audio src="{{item.src}}" id="{{index}}"  bindended="ended"></audio> -->
+    </view>
+    </view>
+  </view>
+</view>
+</scroll-view>
+</view>

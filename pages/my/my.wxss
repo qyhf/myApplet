@@ -1,0 +1,128 @@
+.header{
+  height:200px;
+  overflow: hidden;
+  position: relative;
+}
+.portrait{
+  width:100%;
+  filter: blur(5px);
+}
+.mask{
+  width:100%;
+  height:200px;
+  background-color:#fff;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity: .5;
+}
+.name{
+
+  width:100%;
+  position:absolute;
+  text-align: center;
+  left:0px;
+  top:120px;
+}
+
+.btn{
+  width:100%;
+  height:46px;
+  position:absolute;
+  top:150px;
+  left:0;
+}
+button{
+  width:100px;
+  /* position:absolute;
+  top:0px;
+  left:50%;
+  margin-left:-50px; */
+}
+.cover_img{
+  width:100%;
+  height:80px;
+  position: absolute;
+  top:35px;
+  left:0;
+}
+.portraitShow{
+  display:block;
+  width:80px;
+  height:80px;
+  position:absolute;
+  top:0;
+  left:-40px;
+  margin:0 50%;
+  border-radius:50%;
+}
+.con{
+  color:#d4237a;
+  border-bottom:2px solid #d4237a;
+
+}
+.myConcent{
+  border-bottom:1px solid #eee;
+  color:#333;
+}
+.near{
+  width:50%;
+  font-size:14px;
+  float:left;
+}
+.wrapper{
+  width:28px;
+  margin:0 auto;
+  padding:10px 0;
+}
+.list{
+  width:100%;
+  height:40px;
+}
+.num{
+  width:10%;
+  font-size:14px;
+  color:#666;
+  height:40px;
+  text-align:center;
+  line-height: 40px;
+  float:left;
+}
+.containt{
+  width:90%;
+  height:39px;
+  border-bottom:1px solid #eee;
+  padding:0 10px;
+  position: relative;
+}
+.song{
+  font-size:14px;
+}
+.singer{
+  display:block;
+  font-size:10px;
+  color:#999;
+}
+.img{
+ 
+  position:relative;
+}
+.pic{
+  width:20px;
+  height:20px;
+  position:absolute;
+  right:50px;
+  top:10px;
+}
+.show{
+  display:flex;
+}
+.hide{
+  display:none;
+}
+.active{
+  color:#d4237a;
+}
+.act{
+  color:#ef96c2;
+}

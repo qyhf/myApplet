@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/rank/rank",
+    "pages/player/player",
+    "pages/logs/logs"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e3599e",
+    "navigationBarTitleText": "听听音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar":{
+    "list":[{
+      "pagePath": "pages/index/index",
+      "text":"乐库",
+      "iconPath":"./images/song.png",
+      "selectedIconPath":"./images/song_h.png"
+    },
+    {
+      "pagePath": "pages/rank/rank",
+      "text": "排行榜",
+      "iconPath": "./images/rank.png",
+      "selectedIconPath": "./images/rank_h.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "./images/my.png",
+      "selectedIconPath": "./images/my_h.png"
+    }
+    
+    ],
+    "color":"#8a8a8a",
+    "selectedColor":"#d4237a"
+  }
+}

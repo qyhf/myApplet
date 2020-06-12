@@ -1,0 +1,53 @@
+<swiper autoplay="true" indicator-dots="true" indicator-active-color="#ffffff" indicator-color="rgba(255,255,255,.3)">
+   <block wx:for="{{banner}}" wx:key="*this">
+     <swiper-item>
+        <image mode="widthFix" src="{{item}}"></image>
+    </swiper-item>
+   </block>
+</swiper>
+<!-- 热门歌曲顶部栏部分 -->
+<view class="hot">
+  <text class="song">热门歌曲</text>
+  <text class="more" bindtap="hot_more">更多</text>
+  <image bindtap="hot_more" class="icon" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/icon-arrow.png?sign=71c8550660b0bc89e3d51f9fe5e064b7&t=1589852964"></image>
+</view>
+<!-- 歌曲部分 -->
+<view class="content clearfix" >
+<view bindtap="jump" data-index="{{index}}" class="wrapper" wx:for="{{hot}}" wx:key="*this">
+  
+    <image class="pic" src="{{item.hotImg}}" style="height:{{height}}"></image>
+ 
+  <text class="songName">{{item.song}}</text>
+  <text class="singer">{{item.singer}}</text>
+</view>
+</view>
+<!-- 推荐歌曲顶部栏部分 -->
+<view class="hot">
+  <text class="song">推荐歌单</text>
+  <text class="more" bindtap="recom_more">更多</text>
+  <image bindtap="recom_more" class="icon" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/icon-arrow.png?sign=71c8550660b0bc89e3d51f9fe5e064b7&t=1589852964"></image>
+</view>
+<!-- 歌曲部分 -->
+<view class="content clearfix" >
+<view class="wrapper" wx:for="{{recom}}" wx:key="*this" bindtap="jump_recom" data-index="{{index}}">
+  <image class="pic" src="{{item.hotImg}}" style="height:{{height}}"></image>
+  <text class="songName">{{item.song}}</text>
+  <text class="singer">{{item.singer}}</text>
+</view>
+</view>
+<!-- 新歌顶部栏部分 -->
+<view class="hot">
+  <text class="song">新歌首发</text>
+  <text class="more" bindtap="new_more">更多</text>
+  <image bindtap="new_more" class="icon" src="https://6162-ab123-x6z8h-1302184839.tcb.qcloud.la/icon-arrow.png?sign=71c8550660b0bc89e3d51f9fe5e064b7&t=1589852964"></image>
+</view>
+<!-- 歌曲部分 -->
+<view class="content clearfix" >
+<view class="wrapper" wx:for="{{news}}" wx:key="*this" bindtap="jump_new" data-index="{{index}}">
+  <image class="pic" src="{{item.hotImg}}" style="height:{{height}}"></image>
+  <text class="songName">{{item.song}}</text>
+  <text class="singer">{{item.singer}}</text>
+</view>
+</view>
+ <audio src="{{song}}" id="myAudio"  bindended="ended" bindtimeupdate="change"></audio>
+ 
